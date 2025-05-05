@@ -3,3 +3,8 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+
+:root{
+	--gray: #8B8B8B;
+	--dark-brown: #181313;
+}
