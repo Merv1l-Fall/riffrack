@@ -1,4 +1,4 @@
-import { NavLink } from "react-router"
+import { Link } from "react-router"
 import "./Header.css"
 import RRlogo from "../assets/logo.svg"
 import carticon from "../assets/mdi_cart.svg"
@@ -8,12 +8,12 @@ const Header = () => {
 	return(
 		<header>
 			<nav className="header-nav">
-				<NavLink>
+				<Link to="/">
 				<img src={RRlogo} alt="RiffRack Logo" />
-				</NavLink>
-				<NavLink>
-					<img src={carticon} alt="" />
-				</NavLink>
+				</Link>
+				<Link>
+					<img src={carticon} alt="Cart Link" />
+				</Link>
 			</nav>
 		</header>
 	)
