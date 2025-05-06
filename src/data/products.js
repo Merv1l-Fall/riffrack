@@ -1,4 +1,4 @@
-[
+const products = [
 	{
 	  category: "Electric Guitar",
 	  description: "Super classic Gibson SG, Heritage Cherry.",
@@ -118,5 +118,6 @@
 	  title: "Sweetwater AMSSM5",
 	  img: ""
 	}
-  ]
+  ];
   
+  export {products}
