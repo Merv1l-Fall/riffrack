@@ -2,9 +2,15 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family: "Inter", sans-serif;
 }
 
 :root{
 	--gray: #8B8B8B;
-	--dark-brown: #181313;
+	--dark-brown: #310909;
+}
+
+body{
+	background-color: #ffffff;
+	margin: auto;
 }

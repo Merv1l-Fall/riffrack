@@ -1,0 +1,30 @@
+.filter-container{
+	display: flex;
+	align-items: center;
+	max-width: 80%;
+	gap: 1rem;
+
+	.search-container{
+		display: flex;
+		flex-direction: column;
+
+		#home-search{
+			padding: 0.4rem;
+			height: 2.5rem;
+			border: 2px solid var(--gray);
+			border-radius: 0.2rem;
+		}
+	}
+
+	.dropdown-container{
+		display: flex;
+		flex-direction: column;
+	}
+
+	#filter-dropdown{
+		background: none;
+		border: none;
+		padding: 0;
+		height: 2.5rem;
+	}
+}
