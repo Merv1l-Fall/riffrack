@@ -13,12 +13,14 @@
 			height: 2.5rem;
 			border: 2px solid var(--gray);
 			border-radius: 0.2rem;
+			max-width: 11rem;
 		}
 	}
 
 	.dropdown-container{
 		display: flex;
 		flex-direction: column;
+		
 	}
 
 	#filter-dropdown{
@@ -26,5 +28,6 @@
 		border: none;
 		padding: 0;
 		height: 2.5rem;
+		width: 7rem;
 	}
 }

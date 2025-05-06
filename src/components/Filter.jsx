@@ -32,7 +32,7 @@ const Filter = () => {
 				<select name="filter-dropdown" id="filter-dropdown" value={selected} onChange={handleFilterChange}>
 					<option value="price-asc">Price    ↑</option>
 					<option value="price-desc">Price   ↓</option>
-					<option value="letter">Sort by letter</option>
+					<option value="letter">ABC</option>
 				</select>
 
 				</div>
