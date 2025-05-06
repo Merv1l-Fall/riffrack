@@ -15,24 +15,24 @@
 	},
 	{
 	  category: "Electric Guitar",
-	  description: "Fender Telecaster, 3-color sunburst finish.",
+	  description: "The legendary Fender Telecaster with its signature twang, in a 3-color sunburst finish.",
 	  price: 1099,
-	  title: "Fender American Professional Telecaster",
-	  img: ""
+	  title: "Fender American Telecaster",
+	  img: "https://astrings.co.uk/cdn/shop/files/ptsbpf1.jpg"
 	},
 	{
 	  category: "Electric Guitar",
 	  description: "Classic Les Paul with 50s neck profile, transparent cherry.",
 	  price: 1999,
 	  title: "Gibson Les Paul Standard 50s",
-	  img: ""
+	  img: "https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/_58/589512/19103024_800.jpg"
 	},
 	{
 	  category: "Electric Guitar",
-	  description: "Ibanez Artcore semi-hollow electric guitar, great tone and feel.",
+	  description: "Ibanez Artcore semi-hollow electric guitar, with great tone and feel. In a beautiful red burst finish.",
 	  price: 799,
 	  title: "Ibanez Artcore AGT80",
-	  img: ""
+	  img: "https://m.media-amazon.com/images/I/71BA7+HIkQL.jpg"
 	},
 	{
 	  category: "Electric Guitar",
