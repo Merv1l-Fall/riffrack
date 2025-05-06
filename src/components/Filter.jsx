@@ -7,10 +7,12 @@ const Filter = () => {
 	const [selected, setSelected] = useState("price-asc");
 	const [search, setSearch] = useState("");
 	const filterProducts = useProductStore((state) => state.filterProducts);
+	const sortProducts = useProductStore((state) => state.sortProducts);
 
-	const handleFilterChange = (event) => {
-		setSelected(event.target.value)
-		console.log(event.target.value)
+	const handleSortingChange = (event) => {
+		const sortOption = event.target.value;
+		setSelected(sortOption);
+		sortProducts(sortOption);
 	}
 
 	const handleSearchChange = (event) => {
@@ -32,7 +34,12 @@ const Filter = () => {
 				</div>
 				<div className="dropdown-container">
 				<label htmlFor="filter-dropdown">Sort</label>
-				<select name="filter-dropdown" id="filter-dropdown" value={selected} onChange={handleFilterChange}>
+				<select 
+				name="filter-dropdown" 
+				id="filter-dropdown" 
+				value={selected} 
+				onChange={handleSortingChange}
+				>
 					<option value="price-asc">Price    ↑</option>
 					<option value="price-desc">Price   ↓</option>
 					<option value="letter">ABC</option>
