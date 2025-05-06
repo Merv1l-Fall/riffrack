@@ -6,17 +6,17 @@ import useProductStore from "../store/productStore"
 import "./Home.css"
 
 const Home = () => {
-	const { products, fetchProducts } = useProductStore();
+	const { filteredProducts, fetchProducts } = useProductStore();
 
 	useEffect(() => {
 		fetchProducts();
-	}, []);
+	}, [fetchProducts]);
 	return(
 		<section>
 			<h1>Products</h1>
 			<Filter />
 			<div className="products-container">
-			{products.map((item) => (
+			{filteredProducts.map((item) => (
 				<StoreProduct 
 				item={item}
 				key={item.id}

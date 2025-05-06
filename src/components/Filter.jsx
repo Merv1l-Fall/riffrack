@@ -1,10 +1,12 @@
 import { useState } from "react"
 import "./Filter.css"
+import useProductStore from "../store/productStore"
 
 const Filter = () => {
 
-	const [selected, setSelected] = useState("price-asc")
-	const [search, setSearch] = useState("")
+	const [selected, setSelected] = useState("price-asc");
+	const [search, setSearch] = useState("");
+	const filterProducts = useProductStore((state) => state.filterProducts);
 
 	const handleFilterChange = (event) => {
 		setSelected(event.target.value)
@@ -12,8 +14,9 @@ const Filter = () => {
 	}
 
 	const handleSearchChange = (event) => {
-		setSearch(event.target.value)
-		console.log(event.target.value)
+		const term = event.target.value;
+		setSearch(term);
+		filterProducts(term);
 	}
 
 	return(
