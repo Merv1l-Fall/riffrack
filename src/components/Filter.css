@@ -31,3 +31,17 @@
 		width: 7rem;
 	}
 }
+
+@media( min-width: 650px){
+.filter-container{
+	min-width: 50%;
+	gap: 4rem;
+	.search-container{
+
+		#home-search{
+			width: 15rem;
+			max-width: 15rem;
+		}
+	}
+}
+}

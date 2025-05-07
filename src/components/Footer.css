@@ -8,6 +8,7 @@ footer {
 	text-align: center;
 	padding-top: 2rem;
 	padding-bottom: 2rem;
+	width: 100%;
 
 	.footer-logo{
 		max-width: 15rem;
