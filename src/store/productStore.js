@@ -18,7 +18,7 @@ const useProductStore = create((set) => ({
 		set((state) => {
 			const term = searchTerm.toLowerCase();
 			const filtered = state.products.filter((product) =>
-				product.title.toLowerCase().includes(term)
+				product.title.toLowerCase().includes(term) || product.category.toLowerCase().includes(term)
 			);
 			return { filteredProducts: filtered };
 		});

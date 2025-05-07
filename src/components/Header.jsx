@@ -11,7 +11,7 @@ const Header = () => {
 				<Link to="/">
 				<img src={RRlogo} alt="RiffRack Logo" />
 				</Link>
-				<Link>
+				<Link to="cart">
 					<img src={carticon} alt="Cart Link" />
 				</Link>
 			</nav>
