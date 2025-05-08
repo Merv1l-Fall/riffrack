@@ -4,6 +4,9 @@ header{
 	min-width: 100%;
 	display: flex;
 	justify-content: center;
+	position: sticky;
+	top: 0rem;
+	background-color: white;
 	
 	.header-nav{
 		display: flex;

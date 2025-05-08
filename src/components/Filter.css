@@ -14,6 +14,8 @@
 			border: 2px solid var(--gray);
 			border-radius: 0.2rem;
 			max-width: 11rem;
+			box-shadow: 7px 8px 14px -9px rgba(0,0,0,0.75);
+
 		}
 	}
 

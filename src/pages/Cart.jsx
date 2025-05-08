@@ -9,8 +9,9 @@ const Cart = () => {
 	);
 
 	return (
-		<section>
+		<section className="cart-section">
 			<h1>Cart</h1>
+			<div className="cart-container">
 			<div className="cart-items">
 				{cart.length === 0 ? (
 					<h2 className="cart-empty">Your cart is empty</h2>
@@ -26,6 +27,7 @@ const Cart = () => {
 			</div>
 			<div className="order-summary">
 				<h2>Order Summary</h2>
+				<div>
 				<div className="summary-item">
 					<p className="text">Subtotal</p>
 					<p className="number">{totalPrice} $</p>
@@ -38,6 +40,9 @@ const Cart = () => {
 					<p className="text">Total</p>
 					<p className="number">{cart.length === 0 ? (0) : (totalPrice + 50)} $</p>
 				</div>
+				</div>
+				<button className="checkout-button">Checkout (?)</button>
+			</div>
 			</div>
 		</section>
 	)
