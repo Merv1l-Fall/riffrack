@@ -1,0 +1,8 @@
+.admin-section{
+
+
+	.admin-input-container{
+		display: flex;
+		flex-direction: column;
+	}
+}
