@@ -1,6 +1,14 @@
 .admin-section{
+	display: flex;
+	justify-content: center;
+	align-items: stretch;
+	gap: 2rem;
 
-
+	.admin-items-container{
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
 	.admin-input-container{
 		display: flex;
 		flex-direction: column;
