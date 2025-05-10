@@ -1,0 +1,150 @@
+.add-item {
+	padding: 1rem;
+	font-family: 'Galdeano', serif;
+	text-align: center;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-self: stretch;
+	font-size: 1.2rem;
+
+	.show-form{
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	a{
+		text-decoration: none;
+	}
+
+	button {
+		padding: 1rem;
+		font-size: 1rem;
+		border: none;
+		border-radius: 0.4rem;
+		cursor: pointer;
+		width: 10rem;
+		transition: scale ease-in-out 0.2s;
+
+		&:disabled{
+			background-color: #ccc;
+   			cursor: not-allowed;
+		}
+	}
+
+	.cancel-button {
+		background-color: #f44336;
+		
+		&:not(:disabled):hover{
+			background-color: #f02617;
+			scale: 1.1;
+		}
+	}
+
+	.submit-button {
+		background-color: #5fc45f;
+	
+
+		&:not(:disabled):hover{
+			background-color: #3d833d;
+			scale: 1.1;
+		}
+
+	}
+
+	h2 {
+		font-size: 1.5rem;
+		margin-bottom: 1.2rem;
+		width: 100%;
+		text-align: left;
+	}
+
+	form {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		align-items: center;
+		border: 1px solid black;
+		border-radius: 0.4rem;
+		padding: 1rem;
+		max-width: 40rem;
+		min-width: 19rem;
+		width: 100%;
+	}
+
+	label {
+		display: flex;
+		flex-direction: column;
+		text-align: left;
+		width: 100%;
+	}
+
+	input,
+	textarea {
+		width: 100%;
+		padding: 0.5rem;
+		border: 2px solid var(--gray);
+		border-radius: 0.2rem;
+		box-shadow: 7px 8px 14px -9px rgba(0,0,0,0.75);
+		font-size: 1rem;
+		font-family: 'Galdeano', serif;
+	}
+
+	input{
+		padding: 1rem;
+	}
+
+	textarea {
+		resize: none;
+		height: 6.4rem;
+	}
+
+	.form-actions {
+		display: flex;
+		justify-content: space-between;
+		gap: 2rem;
+	}
+
+	.error-message {
+		min-height: 1rem;
+		color: rgb(182, 25, 25);
+		font-size: 0.9rem;
+	}
+
+	.back-button {
+		display: inline-block;
+		padding: 1rem;
+		font-size: 1rem;
+		background-color: #3b1f1f;
+		color: white;
+		text-decoration: none;
+		font-weight: bold;
+		margin-left: 10px;
+		width: 6rem;
+	  }
+	  
+	  .back-button:hover {
+		background-color: #6c3f3f;
+	  }
+
+	.show-confirm{
+		display: flex;
+		flex-direction: column;
+		gap: 10rem;
+		margin-bottom: 4rem;
+		margin-top: 4rem;
+
+		.add-more-button{
+			width: 10rem;
+			background-color: var(--green);
+
+			&:hover {
+				scale: 1.1;
+				background-color: #3d833d;
+			}
+		}
+	}
+}

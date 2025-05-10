@@ -16,7 +16,7 @@ const Admin = () => {
 	return (
 		<section className="admin-section">
 			<div className="admin-items-container">
-			<h1>Admin</h1>
+			<h2>Edit or remove items</h2>
 				<Filter />
 			{filteredProducts.length === 0 ? ( <h2 className="no-products">No products found</h2>) : (
 				filteredProducts.map((item) => (

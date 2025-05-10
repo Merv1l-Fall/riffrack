@@ -3,6 +3,7 @@
     justify-content: space-between;
     align-items: center;
     border: 1px solid black;
+	box-shadow: 7px 8px 14px -9px rgba(0,0,0,0.75);
 	border-radius: 0.4rem;
     padding: 0.6rem;
 	width: 100%;
@@ -19,12 +20,12 @@
 		background: none;
 		padding: 0.2rem 0.5rem;
 		border: 1px solid var(--dark-brown);
+		border-radius: 0.4rem;
 		height: 2rem;
 		width: 5rem;
 		cursor: pointer;
 		white-space: nowrap;
 		overflow-x: hidden;
-		font-family: 'Galdeano', serif;
 		font-size: 1rem;
 		transition: all 0.2s ease-in-out;
 
@@ -89,7 +90,7 @@
 		justify-content: center;
 
 		.save-btn{
-			background-color: rgb(95, 196, 95);
+			background-color: #5fc45f;
 
 			&:hover{
 				background-color: rgb(61, 131, 61);

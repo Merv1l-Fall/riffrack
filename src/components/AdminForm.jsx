@@ -1,5 +1,6 @@
 import { useState } from "react"
 import addProductSchema from "../validation/addItemValidation";
+import "./AdminForm.css"
 
 
 const AdminForm = () => {
