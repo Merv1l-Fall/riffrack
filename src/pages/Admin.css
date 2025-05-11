@@ -18,6 +18,8 @@
 			text-align: left;
 		}
 	}
+
+
 	.admin-items-container,
 	.admin-form-container {
 		flex: 1;
@@ -27,6 +29,6 @@
 		margin-top: 2rem;
 	}
 	.admin-form-container{
-		height: 50%;
+		height: 100%;
 	}
 }

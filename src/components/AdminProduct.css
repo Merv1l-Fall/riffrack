@@ -10,8 +10,7 @@
 	max-width: 35rem;
     min-width: 13rem;
 	max-height: 10rem;
-	min-height: 5.6rem;
-	font-family: 'Galdeano', serif;
+	min-height: 8rem;
 
 	overflow: hidden;
     transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
@@ -114,7 +113,6 @@
     padding: 1rem;
     border: 1px solid var(--gray);
     border-radius: 0.2rem;
-	font-family: 'Galdeano', serif;
 	font-size: 1rem;
 }
 

@@ -1,6 +1,5 @@
 .add-item {
 	padding: 1rem;
-	font-family: 'Galdeano', serif;
 	text-align: center;
 	height: 100%;
 	display: flex;
@@ -90,7 +89,6 @@
 		border-radius: 0.2rem;
 		box-shadow: 7px 8px 14px -9px rgba(0,0,0,0.75);
 		font-size: 1rem;
-		font-family: 'Galdeano', serif;
 	}
 
 	input{
@@ -111,7 +109,12 @@
 	.error-message {
 		min-height: 1rem;
 		color: rgb(182, 25, 25);
-		font-size: 0.9rem;
+		/* font-size: 0.5rem; */
+
+		.error{
+			font-size: 1rem;
+			line-height: 1rem;
+		}
 	}
 
 	.back-button {

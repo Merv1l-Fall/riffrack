@@ -1,5 +1,6 @@
 import { useState } from "react"
 import addProductSchema from "../validation/addItemValidation";
+import useProductStore from "../store/productStore";
 import "./AdminForm.css"
 
 
@@ -8,6 +9,7 @@ const AdminForm = () => {
 	const [errors, setErrors] = useState({});
 	const [touched, setTouched] = useState(false);
 
+
 	const [formData, setFormData] = useState({
 		title: '',
 		description: '',
@@ -15,6 +17,10 @@ const AdminForm = () => {
 		price: '',
 		img: '',
 	});
+
+	const addProduct = useProductStore((state) => state.addProduct);
+	const isLoading = useProductStore((state) => state.loading);
+	const storeError = useProductStore((state) => state.error);
 
 	const handleChange = (e) => {
 		const { name, value } = e.target;
@@ -36,7 +42,7 @@ const AdminForm = () => {
 		return validationErrors;
 	};
 
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
 	
 		// Validate the form before submitting
@@ -46,42 +52,38 @@ const AdminForm = () => {
 			console.log("failed to add item", validationErrors)
 			return;
 		}
-	
-		// Add the new item to the database
-		const newItem = {
-			...formData,
-			id: crypto.randomUUID(),
-		};
-	
-		saveNewItem(newItem);
-		
-	
-		// Reset the form after submission
-		setFormData({
+
+		setErrors({});
+		try {
+			await addProduct(formData);
+			console.log("Item added successfully");
+
+			setFormData({
 			title: '',
 			description: '',
 			category: '',
 			price: '',
 			img: '',
 		});
-	
 		setErrors({});
 		setIsItemAdded(true)
 		setTouched(false)
-		const timeout = setTimeout(() => {
-			setIsItemAdded(false)
-		}, 5000)
-	};
+		setIsItemAdded(false)
+	} catch (error) {
+		console.error("Failed to add item:", error);
+	}
+}
 
 	const handleCancel = () => {
 		console.log('Cancelled adding new item');
 		setFormData({
 			title: '',
 			description: '',
-			ingredients: '',
+			category: '',
 			price: '',
 			img: '',
 		})
+		setErrors({});
 		setTouched(false)
 	};
 
@@ -91,7 +93,7 @@ const AdminForm = () => {
 			{isItemAdded ? (
 				<div className='show-confirm'>
 					<h2>Item added!</h2>
-					<button onClick={() => setIsItemAdded(false)} className='add-more-button'>Skapa en till?</button>
+					<button onClick={() => setIsItemAdded(false)} className='add-more-button'>Add another item</button>
 				</div>
 			) : (
 			<div className='show-form'>
@@ -175,7 +177,7 @@ const AdminForm = () => {
 					 className='submit-button'
 					  type="submit"
 					   disabled={!touched}>
-						Add item
+						{isLoading ? "Loading..." : "Add item"}
 					   </button>
 				</div>
 			</form>	

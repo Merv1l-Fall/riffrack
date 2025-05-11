@@ -1,25 +1,23 @@
-import { useState } from "react"
+
 import "./Filter.css"
 import useProductStore from "../store/productStore"
 
 const Filter = () => {
 
-	const [selected, setSelected] = useState("price-asc");
-	const [search, setSearch] = useState("");
-	const filterProducts = useProductStore((state) => state.filterProducts);
-	const sortProducts = useProductStore((state) => state.sortProducts);
+	const filterTerm = useProductStore((state) => state.filterTerm);
+	const sortOption = useProductStore((state) => state.sortOption);
+	const applyFilter = useProductStore((state) => state.applyFilter);
+	const applySort = useProductStore((state) => state.applySort);
 
 	const handleSortingChange = (event) => {
-		const sortOption = event.target.value;
-		setSelected(sortOption);
-		sortProducts(sortOption);
-	}
+	const newSortOption = event.target.value;
+	applySort(newSortOption);
+	};
 
 	const handleSearchChange = (event) => {
-		const term = event.target.value;
-		setSearch(term);
-		filterProducts(term);
-	}
+		const newSearchTerm = event.target.value;
+		applyFilter(newSearchTerm);
+	};
 
 	return(
 		<div className="filter-container">
@@ -27,7 +25,7 @@ const Filter = () => {
 				<label htmlFor="home-search">Search</label>
 				<input 
 				type="text" 
-				value={search}
+				value={filterTerm}
 				id="home-search"
 				onChange={handleSearchChange}
 				/>
@@ -37,7 +35,7 @@ const Filter = () => {
 				<select 
 				name="filter-dropdown" 
 				id="filter-dropdown" 
-				value={selected} 
+				value={sortOption} 
 				onChange={handleSortingChange}
 				>
 					<option value="price-asc">Price    ↑</option>
