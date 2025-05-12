@@ -3,7 +3,7 @@ import { create } from "zustand";
 const useAdminStore = create((set) => ({
 	isLoggedIn: false,
 	toggleLogIn: () => {
-		set((state) => ({isLoggedin: !state.isLoggedIn}))
+		set((state) => ({isLoggedIn: !state.isLoggedIn}))
 	},
 }));
 

@@ -4,6 +4,7 @@ import twitter from "../assets/twitter.svg"
 import tiktok from "../assets/tiktok.svg"
 import instagram from "../assets/instagram.svg"
 import "./Footer.css"
+import { Link } from "react-router"
 
 const Footer = () => {
 	return ( 
@@ -24,8 +25,7 @@ const Footer = () => {
 					<img src={instagram} alt="instagram link" />
 				</a>
 			</div>
-			{/* TODO lead to admin login */}
-			<a className="admin-button" href="/admin">Admin</a>
+			<Link to="/login">Admin</Link>
 		</footer>
 	)
 }
