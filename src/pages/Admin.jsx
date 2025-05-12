@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import { 
+import {
 	updateProduct as updateProductInFirestore,
-	removeProduct as removeProductFromFirestore 
+	removeProduct as removeProductFromFirestore,
 } from "../data/crud";
 
 import AdminProduct from "../components/AdminProduct";
@@ -12,7 +12,6 @@ import "./Admin.css";
 import useAdminStore from "../store/adminStore";
 import { Link, useNavigate } from "react-router";
 
-
 const Admin = () => {
 	const isLoggedIn = useAdminStore((state) => state.isLoggedIn);
 	const navigate = useNavigate();
@@ -21,12 +20,12 @@ const Admin = () => {
 		fetchProducts,
 		updateProduct,
 		removeProduct,
-		isLoading,
+		loading,
 	} = useProductStore();
 
 	useEffect(() => {
-			fetchProducts();
-		}, [fetchProducts]);
+		fetchProducts();
+	}, [fetchProducts]);
 
 	const handleEditProduct = async (updatedProductObject) => {
 		try {
@@ -49,44 +48,48 @@ const Admin = () => {
 	const handleLogOut = () => {
 		useAdminStore.setState({ isLoggedIn: false });
 		navigate("/login");
-	}
+	};
 
-	return (
-		isLoggedIn ? (
-			<section className="admin-section">
-				<div className="admin-items-container">
-					<h2>Edit or remove items</h2>
-					<Filter />
-					{filteredProducts.length === 0 ? (
-						<h2 className="no-products">{isLoading ? ("Loading....") : ("No products found")}</h2>
-					) : (
-						filteredProducts.map((item) => (
-							<AdminProduct
-								item={item}
-								key={item.id}
-								onEdit={handleEditProduct}
-								onRemove={handleRemoveProduct}
-							/>
-						))
-					)}
+	return isLoggedIn ? (
+		<section className="admin-section">
+			<div className="admin-items-container">
+				<h2>Edit or remove items</h2>
+				<Filter />
+				{loading ? (
+					<h2 className="no-products">Loading...</h2>
+				) : filteredProducts.length === 0 ? (
+					<h2 className="no-products">No products found</h2>
+				) : (
+					filteredProducts.map((item) => (
+						<AdminProduct
+							item={item}
+							key={item.id}
+							onEdit={handleEditProduct}
+							onRemove={handleRemoveProduct}
+						/>
+					))
+				)}
+			</div>
+			<div className="admin-form-container">
+				<AdminForm />
+				<div className="logout-container">
+					<button className="logout-btn" onClick={handleLogOut}>
+						Logout
+					</button>
 				</div>
-				<div className="admin-form-container">
-					<AdminForm />
-					<div className="logout-container">
-					<button className="logout-btn"
-					onClick={handleLogOut}>Logout</button>
-					</div>
-				</div>
-			</section>
-		) : (
-			<section>
-				<div className="not-logged-in-container">
-					<h2 className="not-logged-in">Please log in to access the admin panel</h2>
-					<Link className="back-btn" to="/login">Back to Log in page </Link>
-					
-				</div>
-			</section> 
-		)
+			</div>
+		</section>
+	) : (
+		<section>
+			<div className="not-logged-in-container">
+				<h2 className="not-logged-in">
+					Please log in to access the admin panel
+				</h2>
+				<Link className="back-btn" to="/login">
+					Back to Log in page{" "}
+				</Link>
+			</div>
+		</section>
 	);
 };
 

@@ -10,12 +10,13 @@
 	margin-top: 2rem;
 	margin-bottom: 2rem;
 	min-height: 25rem;
+	width: 100%;
 	max-width: 80%;
 }
 
 .no-products{
 	width: 100%;
-	grid-column: span 4;
+	grid-column:  1 / -1;
 }
 
 

@@ -60,3 +60,9 @@
 		color: var(--dark-gray);
 	}
 }
+
+/* @media (max-width: 650px) {
+	.card{
+		padding: 0.1rem;
+	}
+} */
