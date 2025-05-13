@@ -8,6 +8,7 @@ const AdminForm = () => {
 	const [ isItemAdded, setIsItemAdded] = useState(false);
 	const [errors, setErrors] = useState({});
 	const [touched, setTouched] = useState(false);
+	const [isSubmitted, setIsSubmitted] = useState(false);
 
 
 	const [formData, setFormData] = useState({
@@ -20,11 +21,27 @@ const AdminForm = () => {
 
 	const addProduct = useProductStore((state) => state.addProduct);
 	const isLoading = useProductStore((state) => state.loading);
-	const storeError = useProductStore((state) => state.error);
+	// const storeError = useProductStore((state) => state.error);
 
 	const handleChange = (e) => {
 		const { name, value } = e.target;
-		setFormData({ ...formData, [name]: value });
+		const updatedForm = { ...formData, [name]: value };
+		setFormData(updatedForm);
+
+		if (isSubmitted){
+			const  {error} = addProductSchema.validate(updatedForm, { abortEarly: false });
+			const validationErrors = {};
+			if (error) {
+				error.details.forEach((detail) => {
+					validationErrors[detail.path[0]] = detail.message;
+				});
+			}
+			setErrors(validationErrors);
+		} else {
+			const newErrors = { ...errors };
+			delete newErrors[name];
+			setErrors(newErrors);
+		}
 	};
 
 	const handleFocus = () => {
@@ -39,6 +56,7 @@ const AdminForm = () => {
 		error.details.forEach((detail) => {
 			validationErrors[detail.path[0]] = detail.message;
 		});
+		setErrors(validationErrors);
 		return validationErrors;
 	};
 
@@ -50,10 +68,12 @@ const AdminForm = () => {
 		if (validationErrors) {
 			setErrors(validationErrors);
 			console.log("failed to add item", validationErrors)
+			setIsSubmitted(true)
 			return;
 		}
 
 		setErrors({});
+		setIsSubmitted(false)
 		try {
 			await addProduct(formData);
 			// console.log("Item added successfully");
