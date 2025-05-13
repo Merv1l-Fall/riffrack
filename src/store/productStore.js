@@ -33,7 +33,7 @@ const useProductStore = create((set, get) => ({
 			set({ loading: false, error: "Failed to fetch products" });
 		}
 
-		//TODO maybe clear products if error/fail
+		//TODO? maybe clear products if error/fail
 	},
 
 	addProduct: async (newItemData) => {
