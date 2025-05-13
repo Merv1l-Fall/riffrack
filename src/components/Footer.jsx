@@ -25,7 +25,7 @@ const Footer = () => {
 					<img src={instagram} alt="instagram link" />
 				</a>
 			</div>
-			<Link to="/login">Admin</Link>
+			<Link to="/login" onClick={() => window.scrollTo(0, 0)}>Admin</Link>
 		</footer>
 	)
 }

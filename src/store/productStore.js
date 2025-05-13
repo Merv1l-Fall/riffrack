@@ -55,8 +55,10 @@ const useProductStore = create((set, get) => ({
 					sorted.sort((a, b) => a.price - b.price);
 				} else if (state.sortOption === "price-desc") {
 					sorted.sort((a, b) => b.price - a.price);
-				} else if (state.sortOption === "letter") {
+				} else if (state.sortOption === "letter-asc") {
 					sorted.sort((a, b) => a.title.localeCompare(b.title));
+				} else if (state.sortOption === "letter-desc") {
+					sorted.sort((a, b) => b.title.localeCompare(a.title));
 				}
 				return {
 					products: updatedProducts,
@@ -95,6 +97,8 @@ updateProduct:  async (updatedProductObject) => {
 					sorted.sort((a, b) => b.price - a.price);
 				} else if (state.sortOption === "letter") {
 					sorted.sort((a, b) => a.title.localeCompare(b.title));
+				}else if (state.sortOption === "letter-desc") {
+					sorted.sort((a, b) => b.title.localeCompare(a.title));
 				}
 				return {
 					products: updatedProducts,
@@ -129,6 +133,8 @@ removeProduct: async (productId) => {
 					sorted.sort((a, b) => b.price - a.price);
 				} else if (state.sortOption === "letter") {
 					sorted.sort((a, b) => a.title.localeCompare(b.title));
+				} else if (state.sortOption === "letter-desc") {
+					sorted.sort((a, b) => b.title.localeCompare(a.title));
 				}
 				return {
 					products: updatedProducts,
@@ -157,7 +163,9 @@ removeProduct: async (productId) => {
                 sorted.sort((a, b) => b.price - a.price);
             } else if (state.sortOption === "letter") {
                 sorted.sort((a, b) => a.title.localeCompare(b.title));
-            }
+            } else if (state.sortOption === "letter-desc") {
+					sorted.sort((a, b) => b.title.localeCompare(a.title));
+				}
 			return { filteredProducts: sorted, filterTerm: term };
 		});
 	},
@@ -174,7 +182,9 @@ removeProduct: async (productId) => {
 			} else if (sortOption === "letter") {
 				// Sort alphabetically
 				sorted.sort((a, b) => a.title.localeCompare(b.title));
-			}
+			} else if (state.sortOption === "letter-desc") {
+					sorted.sort((a, b) => b.title.localeCompare(a.title));
+				}
 			return { filteredProducts: sorted, sortOption: sortOption };
 		});
 	},

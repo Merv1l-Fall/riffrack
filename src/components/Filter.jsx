@@ -40,7 +40,8 @@ const Filter = () => {
 				>
 					<option value="price-asc">Price    ↑</option>
 					<option value="price-desc">Price   ↓</option>
-					<option value="letter">ABC</option>
+					<option value="letter-desc">ABC    ↑</option>
+					<option value="letter-asc">ABC     ↓</option>
 				</select>
 
 				</div>
