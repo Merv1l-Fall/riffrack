@@ -56,7 +56,7 @@ const AdminForm = () => {
 		setErrors({});
 		try {
 			await addProduct(formData);
-			console.log("Item added successfully");
+			// console.log("Item added successfully");
 
 			setFormData({
 			title: '',
