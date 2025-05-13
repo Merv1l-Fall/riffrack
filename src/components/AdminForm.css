@@ -136,17 +136,26 @@
 	.show-confirm{
 		display: flex;
 		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 		gap: 10rem;
 		margin-bottom: 4rem;
 		margin-top: 4rem;
 
+
+		h2{
+			text-align: center;
+		}
 		.add-more-button{
-			width: 10rem;
-			background-color: var(--green);
+			width: 12rem;
+			background-color: var(--dark-brown);
+			font-size: 1rem;
+			color: white;
+			border-radius: 0.4rem;
 
 			&:hover {
 				scale: 1.1;
-				background-color: #3d833d;
+				/* background-color: #3d833d; */
 			}
 		}
 	}

@@ -68,7 +68,6 @@ const AdminForm = () => {
 		setErrors({});
 		setIsItemAdded(true)
 		setTouched(false)
-		setIsItemAdded(false)
 	} catch (error) {
 		console.error("Failed to add item:", error);
 	}
