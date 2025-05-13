@@ -104,6 +104,7 @@ const AdminForm = () => {
 		})
 		setErrors({});
 		setTouched(false)
+		setIsSubmitted(false)
 	};
 
 	return (
