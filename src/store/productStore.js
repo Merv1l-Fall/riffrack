@@ -18,7 +18,7 @@ const useProductStore = create((set, get) => ({
 		set({ loading: true, error: null});
 		try {
 			const fetchedPorducts = await fetchProductsFromFirestore();
-			console.log("Fetched products:", fetchedPorducts);
+			// console.log("Fetched products:", fetchedPorducts);
 
 			set({
 				products: fetchedPorducts,
@@ -42,7 +42,7 @@ const useProductStore = create((set, get) => ({
 			const newItemRef = await addProductToFirestore(newItemData);
 			const newItemWithId = { id: newItemRef.id, ...newItemData };
 
-			console.log("Added item with ID:", newItemRef.id);
+			// console.log("Added item with ID:", newItemRef.id);
 			set(state => {
 				const updatedProducts = [...state.products, newItemWithId];
 				const filtered = updatedProducts.filter(product =>
@@ -76,7 +76,7 @@ updateProduct:  async (updatedProductObject) => {
 	set({ loading: true, error: null });
 	try {
 		await updateProductInFirestore(updatedProductObject);
-		console.log("Updated product:", updatedProductObject);
+		// console.log("Updated product:", updatedProductObject);
 
 		set(state => {
 			const updatedProducts = state.products.map(product =>
@@ -114,7 +114,7 @@ removeProduct: async (productId) => {
 	set({ loading: true, error: null });
 	try { 
 		await removeProductFromFirestore(productId);
-		console.log("Removed product with ID:", productId);
+		// console.log("Removed product with ID:", productId);
 		set(state => {
 			const updatedProducts = state.products.filter(product => product.id !== productId);
 			const filtered = updatedProducts.filter(product =>

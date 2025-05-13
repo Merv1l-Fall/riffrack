@@ -74,7 +74,7 @@ const AdminForm = () => {
 }
 
 	const handleCancel = () => {
-		console.log('Cancelled adding new item');
+		// console.log('Cancelled adding new item');
 		setFormData({
 			title: '',
 			description: '',
