@@ -5,11 +5,8 @@ import useProductStore from "../store/productStore";
 import "./Home.css";
 
 const Home = () => {
-	const { filteredProducts, fetchProducts, loading } = useProductStore();
+	const { filteredProducts, loading } = useProductStore();
 
-	useEffect(() => {
-		fetchProducts();
-	}, []);
 	return (
 		<section className="home-section">
 			<h1>Products</h1>

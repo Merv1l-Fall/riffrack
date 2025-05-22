@@ -17,15 +17,10 @@ const Admin = () => {
 	const navigate = useNavigate();
 	const {
 		filteredProducts,
-		fetchProducts,
 		updateProduct,
 		removeProduct,
 		loading,
 	} = useProductStore();
-
-	useEffect(() => {
-		fetchProducts();
-	}, [fetchProducts]);
 
 	const handleEditProduct = async (updatedProductObject) => {
 		try {

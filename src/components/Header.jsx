@@ -1,21 +1,31 @@
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import "./Header.css";
 import RRlogo from "../assets/logo.svg";
 import carticon from "../assets/mdi_cart.svg";
 import useCartStore from "../store/cartStore";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 const Header = () => {
 	const totalItems = useCartStore((state) =>
     state.cart.reduce((sum, item) => sum + item.quantity, 0)
   );
 
+  const navigate = useNavigate();
+
+  const handleHomeClick = () => {
+	if (window.location.hash === "#/") {
+	  window.scrollTo(0, 0);
+	} else {
+		navigate("/");
+	}
+  }
+
 	return (
 		<header>
 			<nav className="header-nav">
-				<Link to="/">
-					<img src={RRlogo} alt="RiffRack Logo" />
-				</Link>
+				{/* <Link to="/"> */}
+					<img src={RRlogo} onClick={handleHomeClick} alt="RiffRack Logo" />
+				{/* </Link> */}
 				<Link to="cart" className="cart-link">
 					<img src={carticon} alt="Cart Link" />
 					{totalItems > 0 && (
